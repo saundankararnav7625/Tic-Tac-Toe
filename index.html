@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play tic-tac-toe against the computer. Choose Easy for random moves or Hard for an opponent that never loses.">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Tic-tac-toe</h1>
+    <p>You are X and you go first. Get three in a row to win.</p>
+
+    <div class="controls">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy (random moves)</option>
+        <option value="hard" selected>Hard (unbeatable)</option>
+      </select>
+    </div>
+
+    <p id="status" role="status"></p>
+
+    <!-- script.js fills this with nine buttons -->
+    <div id="board" role="group" aria-label="Tic-tac-toe board"></div>
+
+    <dl class="scores">
+      <div><dt>You</dt><dd id="score-player">0</dd></div>
+      <div><dt>Computer</dt><dd id="score-computer">0</dd></div>
+      <div><dt>Draws</dt><dd id="score-draws">0</dd></div>
+    </dl>
+
+    <button type="button" id="new-game">New game</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
