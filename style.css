@@ -1,0 +1,109 @@
+:root {
+  --bg: #efeef6;
+  --ink: #221f3a;
+  --muted: #565373;
+  --x: #2f4fc4;
+  --o: #b02a63;
+  --win: #ffe08a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+main {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+p { line-height: 1.5; }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.controls label { font-weight: 600; }
+
+select,
+button {
+  font: inherit;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--muted);
+  color: var(--ink);
+  background: #fff;
+}
+
+button { cursor: pointer; }
+
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--x);
+  outline-offset: 2px;
+}
+
+#status {
+  min-height: 1.5rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* The board's dark background shows through the gaps as grid lines */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 6px;
+  background: var(--ink);
+  border-radius: 0.75rem;
+}
+
+.cell {
+  aspect-ratio: 1;
+  padding: 0;
+  font-size: clamp(2.5rem, 16vw, 4rem);
+  font-weight: 700;
+  border: 0;
+  border-radius: 0.4rem;
+  background: #fff;
+}
+
+.cell[aria-disabled="true"] { cursor: not-allowed; }
+.cell.x { color: var(--x); }
+.cell.o { color: var(--o); }
+.cell.win { background: var(--win); }
+
+.cell:focus-visible {
+  outline: 4px solid var(--x);
+  outline-offset: -4px;
+}
+
+.scores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+dt { color: var(--muted); }
+
+dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
